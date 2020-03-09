@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <%= link_to root_path, class: 'navbar-brand text-center' do %>
+        <%= image_tag 'doge.png', class: 'd-inline-block align-top' %>
+      <% end %>
+      <div class="navbar-brand title">
+        <b>watch doge</b>
+        <br />
+        much news <br/> very info
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

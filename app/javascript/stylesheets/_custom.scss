@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700&display=swap');
+
+.navbar {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: left;
+  padding: 0.5rem 1rem;
+}
+
+.title {
+  color:white;
+  font-size: 16px;
+}
+
+.subtitle {
+  font-size: 8px;
+}
