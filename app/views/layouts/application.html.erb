@@ -5,20 +5,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <nav class="navbar navbar-dark bg-primary">
-      <%= link_to root_path, class: 'navbar-brand text-center' do %>
+      <%= link_to root_path, class: 'navbar-brand' do %>
         <%= image_tag 'doge.png', class: 'd-inline-block align-top' %>
+        <div class="navbar-brand ml-2">
+          <div class="title">
+            watch doge
+          </div>
+          <div class="subtitle">
+            much news 
+            <br/> 
+            very info
+            <br />
+            wow
+          </div>
+        </div>
       <% end %>
-      <div class="navbar-brand title">
-        <b>watch doge</b>
-        <br />
-        much news <br/> very info
-      </div>
     </nav>
     <%= yield %>
   </body>
