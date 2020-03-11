@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark">
+  <%= link_to root_path, class: 'navbar-brand' do %>
+    <%= image_tag 'doge.png', class: 'd-inline-block align-top' %>
+    <div class="navbar-brand ml-2">
+      <div class="title">
+        watch doge
+      </div>
+      <div class="subtitle">
+        much news 
+        <br/> 
+        very info
+        <br />
+        wow
+      </div>
+    </div>
+  <% end %>
+  <ul class="navbar-nav mr-4">
+    <% if user_signed_in? %>
+      <li class="navi-item">
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

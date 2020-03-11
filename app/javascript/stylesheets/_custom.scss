@@ -42,6 +42,10 @@ input, button, select, optgroup, textarea {
   text-align: center;
 }
 
+input {
+  width: 250px;
+}
+
 .box {
   background-color: #fff;
   border-radius: .25rem;
@@ -55,6 +59,7 @@ input[type="radio"], input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
   height: 15.55px;
+  width: inherit;
 }
 
 .btn-dark {
@@ -62,4 +67,23 @@ input[type="radio"], input[type="checkbox"] {
   margin-top: 5px;
   width: 100px;
   padding-bottom: 9.5px;
+}
+
+.article_content {
+  width: 100%;
+  min-height: 200px;
+  text-align: left;
+}
+
+.article_form, input {
+  text-align: left;
+  resize: none;
+}
+
+.article_title {
+  font-weight: bold;
+}
+
+.content {
+  font-size: 13px;
 }

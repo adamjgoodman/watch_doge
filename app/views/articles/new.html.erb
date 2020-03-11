@@ -1,0 +1,57 @@
+<div class="box col-12 text-left col-sm-8 offset-sm-2 mt-4">
+<h2 class="ml-4 mt-3">Submit New Article</h2>
+  <div class="col-10 offset-1 mt-4 article_form">
+    <%= form_with model: @article do |form| %>
+      <%= form.label :title, 'Title:' %> 
+        <%= form.text_field :title %>
+      <br />
+      <%= form.label :category, 'Category:' %>
+        <%= form.select(:category, ['Pop Culture', 'Sports', 'Politics', 'Tech', 'Opinion', 'Miscellaneous'], prompt: 'Select Category') %>
+      <br />
+      <%= form.label :content, 'Content:' %>
+      <br />
+        <%= form.text_area :content, class: 'article_content' %>
+      <br />
+      <%= form.submit class: 'btn btn-dark', style: 'width:inherit;' %>
+    <% end %>
+  </div>
+  <br />
+</div>
+<br />
+
+<script>
+// Ability to tab in text area
+var textareas = document.getElementsByTagName('textarea');
+var count = textareas.length;
+for(var i=0;i<count;i++){
+    textareas[i].onkeydown = function(e){
+        if(e.keyCode==9 || e.which==9){
+            e.preventDefault();
+            var s = this.selectionStart;
+            this.value = this.value.substring(0,this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
+            this.selectionEnd = s+1; 
+        }
+    }
+}
+// Expand article text area as needed
+var autoExpand = function (field) {
+
+	field.style.height = 'inherit';
+
+	var computed = window.getComputedStyle(field);
+
+	var height = parseInt(computed.getPropertyValue('border-top-width'), 10)
+	             + parseInt(computed.getPropertyValue('padding-top'), 10)
+	             + field.scrollHeight
+	             + parseInt(computed.getPropertyValue('padding-bottom'), 10)
+	             + parseInt(computed.getPropertyValue('border-bottom-width'), 10);
+
+	field.style.height = height + 'px';
+
+};
+
+document.addEventListener('input', function (event) {
+	if (event.target.tagName.toLowerCase() !== 'textarea') return;
+	autoExpand(event.target);
+}, false);
+</script>
