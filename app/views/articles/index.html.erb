@@ -1,14 +1,119 @@
-<div class="col-10 offset-1">
+<div class="col-12 category mr-auto ml-auto">
   <h1>Sports Watch</h1>
-  <div class="row">
-    <% @articles.where(category: 'Sports').each do |article| %>
-      <div class="box col-12 col-sm-4">
-        <h5 class="article_title ml-2 mt-2 mb-1"><%= article.title %></h5>
-        <h6 class="ml-2 mt-0"><%= article.category %></h6>
-        <hr />
-        <p class="content pl-3 pl-1"><%= article.content.truncate(250) %></p>
-        <%= link_to 'Read More...', article_path(article), class: 'mr-2 mb-2 float-right' %>
-      </div>
+  <div class="scrolling_wrapper ml-auto mr-auto">
+    <div class="clear"></div>
+    <% if @articles.where(category: 'Sports').exists? %>
+      <% @articles.where(category: 'Sports').each do |article| %>
+        <div class="preview mr-4 mt-auto mb-auto">
+          <h5 class="article_title ml-2 mt-2 mb-1"><%= article.title %></h5>
+          <h6 class="ml-2 mt-0"><%= article.category %></h6>
+          <hr />
+          <p class="content pl-3 pl-1"><%= article.content.truncate(350) %></p>
+          <%= link_to 'Read More...', article_path(article), class: 'mr-2 mb-2 float-right' %>
+        </div>
+      <% end %>
+    <% else %>
+    <%= render partial: "/articles/empty" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-12 category mr-auto ml-auto">
+  <h1>Pop Culture Watch</h1>
+  <div class="scrolling_wrapper ml-auto mr-auto">
+    <div class="clear"></div>
+    <% if @articles.where(category: 'Pop Culture').exists? %>
+      <% @articles.where(category: 'Pop Culture').each do |article| %>
+        <div class="preview mr-4 mt-auto mb-auto">
+          <h5 class="article_title ml-2 mt-2 mb-1"><%= article.title %></h5>
+          <h6 class="ml-2 mt-0"><%= article.category %></h6>
+          <hr />
+          <p class="content pl-3 pl-1"><%= article.content.truncate(350) %></p>
+          <%= link_to 'Read More...', article_path(article), class: 'mr-2 mb-2 float-right' %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= render partial: "/articles/empty" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-12 category mr-auto ml-auto">
+  <h1>Tech Watch</h1>
+  <div class="scrolling_wrapper ml-auto mr-auto">
+    <div class="clear"></div>
+    <% if @articles.where(category: 'Tech').exists? %>
+      <% @articles.where(category: 'Tech').each do |article| %>
+        <div class="preview mr-4 mt-auto mb-auto">
+          <h5 class="article_title ml-2 mt-2 mb-1"><%= article.title %></h5>
+          <h6 class="ml-2 mt-0"><%= article.category %></h6>
+          <hr />
+          <p class="content pl-3 pl-1"><%= article.content.truncate(350) %></p>
+          <%= link_to 'Read More...', article_path(article), class: 'mr-2 mb-2 float-right' %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= render partial: "/articles/empty" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-12 category mr-auto ml-auto">
+  <h1>Politics Watch</h1>
+  <div class="scrolling_wrapper ml-auto mr-auto">
+    <div class="clear"></div>
+    <% if @articles.where(category: 'Politics').exists? %>
+      <% @articles.where(category: 'Politics').each do |article| %>
+        <div class="preview mr-4 mt-auto mb-auto">
+          <h5 class="article_title ml-2 mt-2 mb-1"><%= article.title %></h5>
+          <h6 class="ml-2 mt-0"><%= article.category %></h6>
+          <hr />
+          <p class="content pl-3 pl-1"><%= article.content.truncate(350) %></p>
+          <%= link_to 'Read More...', article_path(article), class: 'mr-2 mb-2 float-right' %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= render partial: "/articles/empty" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-12 category mr-auto ml-auto">
+  <h1>Opinion Watch</h1>
+  <div class="scrolling_wrapper ml-auto mr-auto">
+    <div class="clear"></div>
+    <% if @articles.where(category: 'Opinion').exists? %>
+      <% @articles.where(category: 'Opinion').each do |article| %>
+        <div class="preview mr-4 mt-auto mb-auto">
+          <h5 class="article_title ml-2 mt-2 mb-1"><%= article.title %></h5>
+          <h6 class="ml-2 mt-0"><%= article.category %></h6>
+          <hr />
+          <p class="content pl-3 pl-1"><%= article.content.truncate(350) %></p>
+          <%= link_to 'Read More...', article_path(article), class: 'mr-2 mb-2 float-right' %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= render partial: "/articles/empty" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-12 category mr-auto ml-auto">
+  <h1>Everything Else Watch</h1>
+  <div class="scrolling_wrapper ml-auto mr-auto">
+    <div class="clear"></div>
+    <% if @articles.where(category: 'Miscellaneous').exists? %>
+      <% @articles.where(category: 'Miscellaneous').each do |article| %>
+        <div class="preview mr-4 mt-auto mb-auto">
+          <h5 class="article_title ml-2 mt-2 mb-1"><%= article.title %></h5>
+          <h6 class="ml-2 mt-0"><%= article.category %></h6>
+          <hr />
+          <p class="content pl-3 pl-1"><%= article.content.truncate(350) %></p>
+          <%= link_to 'Read More...', article_path(article), class: 'mr-2 mb-2 float-right' %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= render partial: "/articles/empty" %>
     <% end %>
   </div>
 </div>
