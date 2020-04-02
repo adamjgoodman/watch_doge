@@ -138,6 +138,10 @@ input[type="radio"], input[type="checkbox"] {
   top: 0;
   background: lightgray;
   z-index: 1;
-  margin-bottom: 20px;
+  margin-bottom: -20px;
   height: 43px;
+}
+
+.alert {
+  margin-bottom: 0;
 }
