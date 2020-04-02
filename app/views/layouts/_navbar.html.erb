@@ -15,8 +15,10 @@
     </div>
   <% end %>
   <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-    <li class="nav-link">
-      <i class="fa fa-plus-circle mr-2"></i>Contribute Article
+    <li class="nav-item">
+      <%= link_to new_article_path, class: 'nav-link' do %>
+        <i class="fa fa-plus-circle mr-2"></i>Contribute Article
+      <% end %>
     </li>
   </ul>
   <ul class="navbar-nav mr-4">

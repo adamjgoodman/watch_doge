@@ -131,3 +131,13 @@ input[type="radio"], input[type="checkbox"] {
 .empty_doge {
   height: fit-content;
 }
+
+.cat_selector {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: lightgray;
+  z-index: 1;
+  margin-bottom: 20px;
+  height: 43px;
+}
